@@ -1,15 +1,14 @@
-const TextCard = ({style}) => (
+import { useContext } from "react";
+import { textContext } from "../../context/textContext";
+
+
+const TextCard = ({style}) => {
+
+	const {text} = useContext(textContext);
+
+	return (
 	<p className={style.felicitation}>
-		Поздравляю с днем рожденья!
-		Пусть будет жизнь полна веселья,
-		Не будет грусти и хлопот,
-		А только счастье круглый год!
-		<br />
-		<br />
-		Желаю творческих успехов,
-		Прекрасных дней, улыбок, смеха.
-		Любви, душевного тепла,
-		Как сказка, чтобы жизнь была!
+		{text}
 	</p>
-)
+)}
 export default TextCard;
